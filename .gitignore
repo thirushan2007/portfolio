@@ -1,0 +1,33 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+
+# Java/Spring Boot compiled output
+target/
+build/
+.mvn/wrapper/maven-wrapper.jar
+
+# Sensitive environment files and credentials
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+application.properties
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE Folders
+.vscode/
+.idea/
+*.iws
+*.iml
+*.ipr
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.sts4-cache
