@@ -27,7 +27,7 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem('portfolio_token');
       localStorage.removeItem('portfolio_user');
-      window.location.href = '/admin/login';
+      window.location.href = '#/admin/login';
     }
     return Promise.reject(error);
   }

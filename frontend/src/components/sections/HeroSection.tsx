@@ -177,7 +177,7 @@ const ProfileImage = () => (
       }}
     >
       <img
-        src="/profile.png"
+        src={`${process.env.PUBLIC_URL}/profile.png`}
         alt="Thirushan"
         style={{
           width: "100%",
@@ -386,7 +386,8 @@ const HeroSection: React.FC = () => {
             <button
               onClick={async () => {
                 try {
-                  const response = await fetch("http://localhost:8080/api/resume/download");
+                  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:8080/api";
+                  const response = await fetch(`${apiUrl}/resume/download`);
                   if (!response.ok) throw new Error("Resume not found");
                   const blob = await response.blob();
                   const url = window.URL.createObjectURL(blob);

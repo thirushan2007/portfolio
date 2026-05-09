@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import CustomCursor from './components/CustomCursor';
@@ -43,7 +43,7 @@ const PortfolioPage: React.FC = () => (
 );
 
 const App: React.FC = () => (
-  <BrowserRouter>
+  <HashRouter>
     <AuthProvider>
       <CustomCursor />
       <Routes>
@@ -71,7 +71,7 @@ const App: React.FC = () => (
         }}
       />
     </AuthProvider>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default App;
