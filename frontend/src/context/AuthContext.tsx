@@ -20,8 +20,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const savedToken = localStorage.getItem('portfolio_token');
-    const savedUser = localStorage.getItem('portfolio_user');
+    const savedToken = sessionStorage.getItem('portfolio_token');
+    const savedUser = sessionStorage.getItem('portfolio_user');
     if (savedToken && savedUser) {
       setToken(savedToken);
       setUser(JSON.parse(savedUser));
@@ -49,8 +49,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       };
       setToken(authData.token);
       setUser(userData);
-      localStorage.setItem('portfolio_token', authData.token);
-      localStorage.setItem('portfolio_user', JSON.stringify(userData));
+      sessionStorage.setItem('portfolio_token', authData.token);
+      sessionStorage.setItem('portfolio_user', JSON.stringify(userData));
       toast.success('Welcome back, Thirushan!');
       return true;
     } catch (error: any) {

@@ -5,8 +5,8 @@ import { AuthResponse, LoginRequest, Project, Certificate, ContactMessage, Skill
 export const authService = {
   login: (data: LoginRequest) => api.post<AuthResponse>('/auth/login', data),
   logout: () => {
-    localStorage.removeItem('portfolio_token');
-    localStorage.removeItem('portfolio_user');
+    sessionStorage.removeItem('portfolio_token');
+    sessionStorage.removeItem('portfolio_user');
   },
 };
 
