@@ -135,7 +135,7 @@ const AboutSection: React.FC = () => (
           {/* Career objective */}
           <div style={{ padding: '20px 24px', marginTop: 4, background: 'var(--bg-card)', borderRadius: 'var(--r)', backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', userSelect: 'none' }}>
             <p style={{ fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '0.15em', color: 'var(--neon)', opacity: 0.8, marginBottom: 10 }}>
-              <span style={{ color: 'var(--olive)' }}>// </span>career_objective
+              <span style={{ color: 'var(--olive)' }}>{'// '}</span>career_objective
             </p>
             <p className="body" style={{ fontSize: 13, lineHeight: 1.8 }}>
               Seeking full-stack or blockchain roles where I can leverage my skills to ship impactful, scalable products.

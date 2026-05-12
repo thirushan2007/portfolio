@@ -18,24 +18,24 @@ const DEFAULT_EXPERIENCE: Experience[] = [
 ];
 
 /* Scroll-reveal hook */
-const useReveal = () => {
+const useReveal = (dependency: any) => {
   useEffect(() => {
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.tl-item').forEach(el => obs.observe(el));
     return () => obs.disconnect();
-  }, []);
+  }, [dependency]);
 };
 
 const ExperienceSection: React.FC = () => {
   const [experiences, setExperiences] = React.useState<Experience[]>([]);
-  useReveal();
+  useReveal(experiences.length);
 
   React.useEffect(() => {
     experienceService.getAll()
       .then(res => {
-        if (res.data && res.data.length > 0) {
+        if (res.data) {
           setExperiences(res.data);
         }
       })

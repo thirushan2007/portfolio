@@ -87,12 +87,7 @@ const Navbar: React.FC = () => {
 
           {/* Admin & Mobile */}
           <div className="flex items-center gap-3">
-            <Link
-              to="/admin/login"
-              className="hidden md:block btn-outline text-xs py-2 px-4"
-            >
-              Admin
-            </Link>
+
             <button
               className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -128,14 +123,7 @@ const Navbar: React.FC = () => {
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <Link
-                    to="/admin/login"
-                    className="block px-4 py-3 rounded-lg text-sm font-medium text-purple-400 hover:bg-purple-400/10 transition-all duration-300"
-                  >
-                    Admin Dashboard
-                  </Link>
-                </li>
+
               </ul>
             </motion.div>
           )}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+
 
 const links = [
   { label: 'Home', id: 'home' },
@@ -13,7 +13,7 @@ const links = [
 ];
 
 const Navbar: React.FC = () => {
-  const navigate = useNavigate();
+
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('home');
   const [open, setOpen] = useState(false);
@@ -89,10 +89,7 @@ const Navbar: React.FC = () => {
 
           {/* CTA + toggle */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <button onClick={() => navigate('/admin')} className="btn btn-outline hidden md:flex"
-              style={{ padding: '7px 16px', fontSize: 12 }}>
-              Admin
-            </button>
+
             <button onClick={() => setOpen(!open)} className="md:hidden"
               style={{ background: 'none', border: 'none', color: 'var(--t2)', padding: 4 }}>
               {open ? <X size={19} /> : <Menu size={19} />}

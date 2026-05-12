@@ -174,6 +174,14 @@ const AdminDashboard: React.FC = () => {
         const res = await experienceService.create(ef);
         setExps([...exps, res.data]);
       }
+      setEf({
+        company: "",
+        role: "",
+        duration: "",
+        location: "",
+        description: [],
+        technologies: [],
+      });
       setShowEF(false);
       toast.success("Experience saved!");
     } catch (e) {
@@ -587,7 +595,7 @@ const AdminDashboard: React.FC = () => {
               <StatCard
                 icon={TrendingUp}
                 label="Experience"
-                value={1}
+                value={exps.length}
                 color="#ED8B00"
               />
             </div>
